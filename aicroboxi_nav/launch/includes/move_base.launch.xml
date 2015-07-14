@@ -1,0 +1,11 @@
+<launch>
+  <arg name="move_base_group" default="turtlebot" />
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find aicroboxi_nav)/config/$(arg move_base_group)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find aicroboxi_nav)/config/$(arg move_base_group)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find aicroboxi_nav)/config/$(arg move_base_group)/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find aicroboxi_nav)/config/$(arg move_base_group)/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find aicroboxi_nav)/config/$(arg move_base_group)/base_local_planner_params.yaml" command="load" />
+  </node>
+</launch>

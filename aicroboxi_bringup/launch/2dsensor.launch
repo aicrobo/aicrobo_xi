@@ -1,0 +1,18 @@
+<launch>
+  <arg name="2dsensor"  default="$(optenv SENSOR_2D rplidar)"/>
+  <!-- rplidar, hokuyo -->
+  <arg name="use_filter" default="$(optenv USE_FILTER false)"/>
+  
+  <include file="$(find aicroboxi_bringup)/launch/includes/$(arg 2dsensor)_2d_sensor.launch.xml">
+    <arg if="$(arg use_filter)" name="scan_topic" value="scan_raw" />
+    <arg name="laser_frame" value="laser_link" />
+    <!-- if need change port -->
+    <!--arg name="laser_port" value="/dev/ttyUSB1" /-->
+  </include>
+  
+  <include if="$(arg use_filter)" file="$(find aicroboxi_bringup)/launch/includes/laser_filter.launch.xml">
+    <arg name="scan_in" value="scan_raw"/>
+    <arg name="scan_out" value="scan"/>
+  </include>
+  
+</launch>

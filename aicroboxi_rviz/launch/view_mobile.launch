@@ -1,0 +1,6 @@
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find aicroboxi_rviz)/rviz/mobile.rviz" />
+  
+  <!-- add interactive_marker -->
+  <include file="$(find aicroboxi_rviz)/launch/includes/interactive_marker.launch.xml" />
+</launch>

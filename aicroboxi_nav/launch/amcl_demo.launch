@@ -1,0 +1,21 @@
+<launch>
+
+  <param name="use_sim_time" value="false" />
+  
+  <!-- EDIT THIS LINE TO REFLECT THE NAME OF YOUR OWN MAP FILE 
+       Can also be overridden on the command line -->
+  <arg name="map" default="lamda327_map.yaml" />
+
+  <!-- Run the map server with the desired map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find aicroboxi_nav)/maps/$(arg map)"/>
+
+  <!-- Start move_base  -->
+  <arg name="move_base_group" default="turtlebot" />
+  <include file="$(find aicroboxi_nav)/launch/includes/move_base.launch.xml" >
+    <arg name="move_base_group" value="$(arg move_base_group)" />
+  </include>
+  
+  <!-- Fire up AMCL -->
+  <include file="$(find aicroboxi_nav)/launch/includes/amcl.launch.xml" />
+  
+</launch>

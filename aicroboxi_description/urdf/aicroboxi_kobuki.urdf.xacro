@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="aicrobo_xi"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="H_PI" value="1.5707963" />
+  
+  <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
+  <kobuki/>
+  <xacro:include filename="$(find aicroboxi_description)/urdf/kobuki_frame.urdf.xacro"/>
+  <xacro:include filename="$(find aicroboxi_description)/urdf/xtion_pro.urdf.xacro"/>
+</robot>

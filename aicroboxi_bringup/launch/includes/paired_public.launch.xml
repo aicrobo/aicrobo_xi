@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find rocon_app_manager)/launch/paired_public.launch">
+    <arg name="robot_name" value="aicroboxi"/>
+    <arg name="auto_invite" value="true" />
+  </include>
+</launch>

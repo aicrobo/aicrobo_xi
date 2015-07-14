@@ -1,0 +1,14 @@
+<launch>
+  <!-- paired client for app manager -->
+  <include file="$(find rocon_app_manager)/launch/paired_private.launch">
+    <arg name="robot_name" value="aicroboxi"/>
+    <arg name="robot_type" value="turtlebot"/>
+    <arg name="robot_icon" value="aicroboxi_bringup/aicroboxi.png"/>
+    <arg name="rapp_lists" value="rocon_apps/rocon.rapps;aicroboxi_bringup/turtlebot.rapps"/>
+    <arg name="gateway_watch_loop_period" value="10"/>
+    <arg name="disable_uuids" value="true"/>
+    <arg name="hub_whitelist" value="Internal Hub"/>
+  </include>
+  
+  <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager" />
+</launch>

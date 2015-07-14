@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>aicroboxi_nav</name>
+  <version>0.0.0</version>
+  <description>The aicroboxi_nav package</description>
+  
+  <license>BSD</license>
+  <url type="website">http://aicrobo.github.io</url>
+  <author email="yuanboshe@126.com">Yuanbo She</author>
+  <maintainer email="yuanboshe@126.com">Yuanbo She</maintainer>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

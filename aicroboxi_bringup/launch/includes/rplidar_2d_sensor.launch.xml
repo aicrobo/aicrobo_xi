@@ -1,0 +1,14 @@
+<launch>
+  <arg name="scan_topic" default="scan" />
+  <arg name="laser_frame" default="laser_link" />
+  <arg name="laser_port" default="/dev/ttyUSB1" />
+  
+  <node name="aicrobo_rplidar" pkg="rplidar" type="rplidar" output="screen">
+    <param name="com_path" type="string" value="$(arg laser_port)" />
+    <param name="com_baudrate" type="int" value="115200" />
+    <param name="frame_id" type="string" value="$(arg laser_frame)" />
+    <param name="range_min" type="double" value="0.18" />
+    <param name="range_max" type="double" value="6.0" />
+    <remap from="scan" to="$(arg scan_topic)"/>
+  </node>
+</launch>

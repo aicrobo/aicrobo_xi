@@ -1,0 +1,4 @@
+<concert>
+  <launch package="aicroboxi_bringup" name="paired_private.launch.xml" port="11311"/>
+  <launch package="aicroboxi_bringup" name="paired_public.launch.xml" port="11312"/>
+</concert>

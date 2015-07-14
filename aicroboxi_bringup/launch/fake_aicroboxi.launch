@@ -1,0 +1,23 @@
+<launch>
+  <param name="/use_sim_time" value="false"/>
+  
+  <arg name="mobile_base" default="$(optenv MOBILE_BASE create)"/>
+  
+  <include file="$(find aicroboxi_description)/launch/robot_description.launch.xml">
+    <arg name="mobile_base" value="$(arg mobile_base)" />
+  </include>
+  
+  <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+    <rosparam command="delete" param="/arbotix" />
+    <rosparam file="$(find aicroboxi_bringup)/config/fake_aicroboxi_arbotix.yaml" command="load" />
+    <param name="sim" value="true"/>
+    <remap from="cmd_vel" to="base_cmd_vel"/>
+  </node>
+  
+  <!-- velocity commands multiplexer -->
+  <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="cmd_vel_mux" args="load yocs_cmd_vel_mux/CmdVelMuxNodelet mobile_base_nodelet_manager">
+    <param name="yaml_cfg_file" value="$(find aicroboxi_bringup)/param/mux.yaml"/>
+    <remap from="cmd_vel_mux/output" to="base_cmd_vel"/>
+  </node>
+</launch>

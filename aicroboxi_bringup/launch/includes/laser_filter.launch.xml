@@ -1,0 +1,10 @@
+<launch>
+  <arg name="scan_in" default="scan_raw" />
+  <arg name="scan_out" default="scan" />
+  
+  <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter" output="screen">
+    <rosparam command="load" file="$(find aicroboxi_bringup)/config/laser_filter.yaml" />
+    <remap from="scan" to="$(arg scan_in)" />
+    <remap from="scan_filtered" to="$(arg scan_out)" />
+  </node>
+</launch>

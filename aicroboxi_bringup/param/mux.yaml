@@ -1,0 +1,44 @@
+# Created on: Oct 29, 2012
+#     Author: jorge
+# Configuration for subscribers to multiple cmd_vel sources.
+#
+# Individual subscriber configuration:
+#   name:           Source name
+#   topic:          The topic that provides cmd_vel messages
+#   timeout:        Time in seconds without incoming messages to consider this topic inactive
+#   priority:       Priority: an UNIQUE unsigned integer from 0 (lowest) to MAX_INT 
+#   short_desc:     Short description (optional)
+
+subscribers:
+  - name: "Default input"
+    topic: "/cmd_vel"
+    timeout: 0.1
+    priority: 0
+    short_desc: "Default velocity topic"
+  - name: "Navigation stack"
+    topic: "/nav_cmd_vel"
+    timeout: 0.5
+    priority: 3
+    short_desc: "ROS navigation stack controller"
+  - name: "Paired teleop"
+    topic: "/pair_cmd_vel"
+    timeout: 0.1
+    priority: 8
+  - name: "Joystick teleop"
+    topic: "/joy_cmd_vel"
+    timeout: 0.1
+    priority: 9
+  - name: "Keyboard teleop"
+    topic: "/key_cmd_vel"
+    timeout: 0.1
+    priority: 10
+  - name: "Create base input"
+    topic: "/mobile_base/commands/velocity"
+    timeout: 0.5
+    priority: 1
+    short_desc: "Compatible with turtlebot bags"
+  - name: "Create base teleop input"
+    topic: "input/teleop"
+    timeout: 0.5
+    priority: 2
+    short_desc: "Compatible with turtlebot bags"

@@ -1,0 +1,9 @@
+<launch>
+  <arg name="mobile_base" default="$(optenv MOBILE_BASE create)"/>
+  
+  <include file="$(find aicroboxi_description)/launch/robot_description.launch.xml">
+    <arg name="mobile_base" value="$(arg mobile_base)" />
+  </include>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find aicroboxi_rviz)/rviz/model.rviz" />
+</launch>

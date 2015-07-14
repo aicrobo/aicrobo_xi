@@ -1,0 +1,7 @@
+<launch>
+  <arg name="move_base_group" default="turtlebot" />
+  <include file="$(find aicroboxi_nav)/launch/includes/hector_mapping.launch.xml"/>
+  <include file="$(find aicroboxi_nav)/launch/includes/move_base.launch.xml">
+    <arg name="move_base_group" value="$(arg move_base_group)"/>
+  </include>
+</launch>

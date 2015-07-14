@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="turtlebot_interactive_markers" type="turtlebot_marker_server" name="turtlebot_marker_server">
+    <remap from="cmd_vel" to="/mobile_base/commands/velocity"/>
+  </node>
+</launch>

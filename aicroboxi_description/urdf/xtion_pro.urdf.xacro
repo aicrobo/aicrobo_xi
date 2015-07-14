@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="xtion_pro"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <joint name="camera_link_joint" type="fixed">
+    <origin xyz="0 0 0.035" rpy="0 0 0"/>
+    <parent link="camera_base"/>
+    <child link="camera_link" />
+  </joint>
+  
+  <link name="camera_link" />
+  
+  <joint name="camera_rgb_joint" type="fixed">
+    <origin xyz="0.008 0.0185 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_rgb_frame" />
+  </joint>
+  
+  <link name="camera_rgb_frame" />
+  
+  <joint name="camera_rgb_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="${-H_PI} 0 ${-H_PI}" />
+    <parent link="camera_rgb_frame" />
+    <child link="camera_rgb_optical_frame" />
+  </joint>
+  
+  <link name="camera_rgb_optical_frame" />
+  
+  <joint name="camera_depth_joint" type="fixed">
+    <origin xyz="0.008 0.0445 0" rpy="0 0 0" />
+    <parent link="camera_link" />
+    <child link="camera_depth_frame" />
+  </joint>
+  
+  <link name="camera_depth_frame" />
+  
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="${-H_PI} 0 ${-H_PI}" />
+    <parent link="camera_depth_frame" />
+    <child link="camera_depth_optical_frame" />
+  </joint>
+  
+  <link name="camera_depth_optical_frame" />
+</robot>
