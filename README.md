@@ -1,14 +1,11 @@
 aicrobo_xi
-========
-Email: aicrobo@126.com  
-
-Mainly reference turtlebot and rbx1 packages, thanks to their contributions for ROS!
-
-Author: Yuanbo She yuanboshe@126.com  
+=============
+Group: AICRobo http://www.aicrobo.com  
+Email: projects@aicrobo.com
 
 Software License Agreement (BSD License)
 
-Copyright (c) 2013-2015, AICRobo.
+Copyright (c) 2013-2015, AICRobo.  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
