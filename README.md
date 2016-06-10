@@ -5,7 +5,7 @@ Email: projects@aicrobo.com
 
 Software License Agreement (BSD License)
 
-Copyright (c) 2013-2015, AICRobo.  
+Copyright (c) 2013-2016, AICRobo.  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

@@ -5,9 +5,9 @@
   <description>The aicroboxi_teleop package</description>
   
   <license>BSD</license>
-  <url type="website">http://aicrobo.github.io</url>
-  <author email="yuanboshe@126.com">Yuanbo She</author>
-  <maintainer email="yuanboshe@126.com">Yuanbo She</maintainer>
+  <url type="website">http://www.aicrobo.com</url>
+  <author email="projects@aicrobo.com">AICRobo</author>
+  <maintainer email="yuanboshe@aicrobo.com">Yuanbo She</maintainer>
   
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>rospy</build_depend>

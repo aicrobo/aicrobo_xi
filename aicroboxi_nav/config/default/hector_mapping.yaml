@@ -1,0 +1,15 @@
+# Author: Yuanbo She yuanboshe@126.com
+# Website: http://my.phirobot.com
+# Software License Agreement (BSD License)
+# Copyright (c) 2014, yuanboshe.
+# All rights reserved.
+
+laser_max_dist: 4.0
+map_resolution: 0.05
+map_size: 1024
+
+pub_map_odom_transform: true
+map_frame: map
+base_frame: odom
+odom_frame: odom
+tf_map_scanmatch_transform_frame_name: odom_laser

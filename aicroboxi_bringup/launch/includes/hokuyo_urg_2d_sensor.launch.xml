@@ -1,0 +1,16 @@
+<launch>
+  <arg name="scan_topic" default="scan" />
+  <arg name="laser_frame" default="laser_link" />
+  <arg name="serial_port" default="/dev/ttyACM0" />
+  <arg name="ip_address" default="$(optenv LASER_IP )"/>
+  
+  <node name="hokuyo" pkg="urg_node" type="urg_node">
+    <param name="ip_address" type="string" value="$(arg ip_address)"/>
+    <param name="serial_port" type="string" value="$(arg serial_port)"/>
+    <param name="frame_id" value="$(arg laser_frame)" />
+    <param name="calibrate_time" value="false" />
+    <param name="angle_min" value="-1.7" />
+    <param name="angle_max" value="1.7" />
+    <remap from="scan" to="$(arg scan_topic)"/>
+  </node>
+</launch>

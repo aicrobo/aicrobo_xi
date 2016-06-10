@@ -1,8 +1,10 @@
 <launch>
-  <arg name="move_base_group" default="turtlebot" />
-  <include file="$(find aicroboxi_nav)/launch/includes/gmapping.launch.xml" />
+  <arg name="move_base_group" default="$(optenv MOVE_BASE_GROUP default)" />
+  
+  <include file="$(find aicroboxi_nav)/launch/includes/gmapping.launch.xml">
+    <arg name="move_base_group" value="$(arg move_base_group)"/>
+  </include>
   <include file="$(find aicroboxi_nav)/launch/includes/move_base.launch.xml">
     <arg name="move_base_group" value="$(arg move_base_group)"/>
   </include>
-  
 </launch>

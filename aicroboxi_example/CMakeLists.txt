@@ -1,15 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(aicroboxi_example)
 
-find_package(catkin REQUIRED COMPONENTS
-  geometry_msgs roscpp rospy
-  genmsg actionlib_msgs actionlib
-)
+find_package(catkin REQUIRED COMPONENTS roscpp rospy geometry_msgs)
 
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES aicroboxi_example
-  CATKIN_DEPENDS geometry_msgs roscpp rospy
+  CATKIN_DEPENDS roscpp rospy geometry_msgs
 #  DEPENDS system_lib
 )
 
